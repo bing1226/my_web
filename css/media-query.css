@@ -1,0 +1,23 @@
+@media(max-width:992px)
+{
+    #sidebar-toggle{
+        opacity: 1;
+    }
+    #sidebar{
+        transform: translateX(-100%);
+    }
+    #main{
+        width: 100%;
+    }
+    
+   
+}
+@media(max-width:769px)
+{
+    #main .articles .articles-wapper article{
+        width: 100%;
+    }
+    .cover .into{
+        width: 100%;
+    }
+}

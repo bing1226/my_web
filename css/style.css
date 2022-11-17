@@ -1,0 +1,245 @@
+/* 公共样式 */
+
+
+
+
+/* sidebar样式 */
+#sidebar {
+    width: 25%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    /* bottom: 0; */
+    /* flex: 1; */
+    /* flex-grow: 1;
+    flex-basis: 0%; */
+
+    background: rgb(174, 192, 196);
+    padding: 45px 45px 40px 45px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    transition: all 0.5s ease;
+
+
+}
+
+/* 设置nav的上内边距 和它flex-flow分配的空间  */
+#sidebar .nav {
+    padding-top: 85px;
+    /* flex设置1为   flex-grow:1  */
+    flex: 1;
+}
+
+/* h1链接设置样式 */
+#sidebar .title-h1 a {
+    color: black;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+/* 设置列表的字体颜色和上下内边距  使得列表之间有间隙 */
+#sidebar .nav li {
+    padding: 10px 0px;
+    color: black;
+}
+
+#sidebar .nav li a {
+    /* 给a链接相对定位来定位 a::after插入下划线的位置  */
+    position: relative;
+
+
+    color: rgba(0, 0, 0, 0.523);
+    font-weight: 600;
+}
+
+#sidebar .nav li a.active {
+    color: black;
+
+}
+
+/* 文字下面下划线从无到有 */
+/* #sidebar .nav li a:hover::after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 2px;
+    background-color: black;
+    transition: all 0.3s ease;   //重点 css3 transtion过渡
+
+
+} */
+/* 给a::after最后面插入的元素设置样式  绝对定位 将它的位置确定 */
+#sidebar .nav li a::after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    /* right: 0; */
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 2px;
+    background-color: black;
+    /* css3 transition 过渡 */
+    transition: all 0.3s ease;
+    /* css3 transform 缩放 */
+    transform: scale(0);
+
+
+}
+
+/* 在a上hover的时候插入的after元素 */
+#sidebar .nav li a.active::after {
+    transform: scale(1);
+}
+
+#sidebar .nav li a:hover::after {
+    transform: scale(1);
+}
+
+/* 字体图标水平排列 法一
+/* 设置最下面字体图标  字体图标在列表.share中*/
+/* 设置ul上外边距20px 与上面的<p>隔开 */
+/* #sidebar .share {
+    margin-top: 20px;
+ } */
+/* li为块级元素 要使它水平排列将它设为行级元素 适当加点左内边距 使得它有间隙 */
+/* #sidebar .share li{
+    display: inline;
+    padding-left: 10px;
+}  */
+
+/* 字体图标法二 */
+/* 将#sidebar footer 和.share 都display:flex 布局  */
+/* 设置主轴为上下排列column  row为默认值主轴左右排列*/
+/* 设置居中方式沿主轴居中 */
+#sidebar footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* 设置列表ul为flex布局  */
+#sidebar .share {
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+    margin-top: 20px;
+}
+
+#sidebar .share a {
+    color: antiquewhite;
+    font-size: 14px;
+}
+
+/* main样式 */
+#main {
+    width: 75%;
+    float: right;
+
+    /* flex: 3; */
+    /* flex-grow: 3;
+    flex-basis: 0%; */
+    position: relative;
+    height: 100vh;
+    transition: all 0.5s ease;
+
+
+
+    /* overflow-y: scroll; */
+
+}
+
+
+
+#sidebar-toggle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    cursor: pointers;
+    opacity: 0;
+    z-index: 999;
+}
+
+#sidebar-toggle a::after,
+#sidebar-toggle a::before,
+#sidebar-toggle a {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #000;
+    display: block;
+    position: relative;
+    transition: all 0.5s ease;
+
+}
+
+#sidebar-toggle a::after {
+    position: absolute;
+    left: 0;
+    top: 7px;
+
+
+}
+
+#sidebar-toggle a::before {
+    position: absolute;
+    left: 0;
+    top: -7px;
+}
+
+#sidebar-toggle a:hover:after {
+    position: absolute;
+    left: 0;
+    top: 10px;
+
+}
+
+#sidebar-toggle a:hover::before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+#sidebar-toggle.open {
+    left: 270px;
+
+}
+
+#sidebar-toggle.open a {
+    background: transparent;
+
+
+}
+
+#sidebar-toggle.open a::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#sidebar-toggle.open a::after {
+    top: 0;
+    transform: rotate(-45deg);
+
+}
+
+#sidebar.open {
+    width: 270px;
+    transform: translateX(0);
+    background-color: rgb(255, 254, 254);
+}
+
+#main.open {
+
+    left: 270px;
+
+}

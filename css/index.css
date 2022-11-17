@@ -1,0 +1,89 @@
+#main-bg{
+    background: url(../images/bg_1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.4;
+    /* position:fixed;
+    left:25%;
+    top: 0;
+    right: 0%; */
+    z-index: -1;
+}
+.cover .into{
+    width:400px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 0 27px;
+    box-sizing: border-box;
+}
+.cover .desc h1{
+    font-size: 30px;
+    font-weight: 600;
+    color:black;
+    margin-bottom: 20px;
+
+
+}
+.cover .desc h2{
+    font-size: 24px;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 20px;
+}
+.cover .desc p{
+    margin-bottom: 20px;
+}
+#main .cover .photo{
+    margin-bottom: 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+/* #main .cover{
+    height:100vh ;
+    position: relative;
+    box-sizing: border-box;
+} */
+
+
+/* articles  start */
+
+
+#main .articles{
+    padding: 90px 27px;
+   
+    
+}
+#main .articles .heading{
+    text-align: center;
+    width: 60%;
+    margin:0 auto;
+    margin-bottom: 40px;
+}
+
+#main .articles .articles-wapper{
+    display: flex;
+    flex-wrap:wrap;
+
+    
+}
+#main .articles .articles-wapper article{
+    width: 33%;
+    height: 700px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+#main .articles .articles-wapper article a{
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    
+}
